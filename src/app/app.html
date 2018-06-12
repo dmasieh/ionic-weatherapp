@@ -1,0 +1,48 @@
+<ion-menu [content]="content">
+  <ion-grid>
+    <ion-row>
+        <ion-toolbar>
+          <ion-title><ion-icon name="settings"></ion-icon> Settings</ion-title>
+        </ion-toolbar>
+      <ion-content padding id="bigger">
+        <ion-item>Imperial only because it's<br> what the lord desires</ion-item>
+        <ion-list>
+          <form (ngSubmit)="saveForm()">
+            <ion-item>
+              <ion-label fixed>
+                State
+              </ion-label>
+              <ion-input [(ngModel)]="state" name="state" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label fixed>
+                  City
+                </ion-label>
+                <ion-input [(ngModel)]="city" name="city" type="text"></ion-input>
+              </ion-item>
+              <button ion-button type="submit" block>Save Changes</button>
+          </form>
+        </ion-list>
+      </ion-content>
+    </ion-row>
+    <ion-row>
+      <ion-toolbar>
+        <ion-title><ion-icon name="information-circle"></ion-icon> About This App</ion-title>
+      </ion-toolbar> 
+      <ion-list>
+        <ion-item>
+          <strong>App Version: </strong>1.00
+        </ion-item>
+        <ion-item>
+          <strong>Description: </strong>Simple Weather App!
+        </ion-item>
+        <ion-item>
+          <strong>Developer: </strong>masiehdj
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
